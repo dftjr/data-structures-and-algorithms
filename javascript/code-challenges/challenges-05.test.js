@@ -23,10 +23,7 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
-  return arr.reduce((int, n) => {
-    int += n;
-    return int;
-  })
+  return arr.reduce((prev, current) => current + prev, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,7 +39,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-
+  return arr.reduce((prev, current) => prev + current.purchasePrice, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,7 +51,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  return arr.reduce((prev) => prev + 1, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,7 +112,12 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  return arr.reduce((newArr, current) => {
+    newArr.push(current.name);
+    return newArr;
+  },
+    []
+  );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,7 +129,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  return str.split('').reduce((a, b) => b + a);
 };
 
 /* ------------------------------------------------------------------------------------------------
