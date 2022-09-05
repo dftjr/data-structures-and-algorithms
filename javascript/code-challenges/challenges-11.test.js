@@ -19,7 +19,8 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-  // Solution code here...
+  let keys = Object.keys(obj);
+  return keys.map(key => {return `<li>${key}: ${obj[key]}</li>`});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,7 +34,11 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  let sum = 0;
+  input.map(array => {array.map(number => {
+    if (number === target) {sum++}
+  })});
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,7 +52,9 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  let sum = 0;
+  input.map(value => {value.map(newValue => sum += newValue)});
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,7 +136,12 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.map(char => {
+    if (char.gender === 'male' || char.gender === 'female') {
+      return char.name;
+    }
+  })
+  .filter(num => num !== undefined).join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
