@@ -8,7 +8,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  // Solution code here...
+ return str.split('').splice(-10);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +26,10 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let set = [...matrix[0], ...matrix[1], ...matrix[2]];
+  return set.filter((a, b) => {
+    return (b > a) ? a : b;
+  }) [0];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,7 +47,13 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  let sum = 0;
+  for(let i in matrix) {
+    for(let j of matrix[i]) {
+      sum += j;
+    }
+  }
+  return sum;
 };
 
 
@@ -86,7 +95,14 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  let newArr = [];
+  for (let i in hours) {
+    newArr.push({
+      sales: `${data[i]} cookies`,
+      time: hours[i],
+    });
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,7 +127,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  //  Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
