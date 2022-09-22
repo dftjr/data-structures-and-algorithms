@@ -4,7 +4,7 @@ We will be given a random array of numbers (could be and even or odd amount) and
 <br>
 
 ## Whiteboard Process
-<img src="whiteboard-02.png" alt="Whiteboard" height="800" width="800"/>
+<img src="array-insert-shift.png" alt="Whiteboard" height="800" width="800"/>
 
 <br>
 
