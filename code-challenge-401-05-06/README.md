@@ -1,3 +1,16 @@
+# Checklist
+
+ - [ ] Top-level README “Table of Contents” is updated
+ - [ ] README for this challenge is complete
+       - [ ] Summary, Description, Approach & Efficiency, Solution
+       - [ ] Picture of whiteboard
+       - [X] Link to code
+ - [ ] Feature tasks for this challenge are completed
+ - [ ] Unit tests written and passing
+       - [ ] “Happy Path” - Expected outcome
+       - [ ] Expected failure
+       - [ ] Edge Case (if applicable/obvious)
+
 # Singly Linked List
 <!-- Short summary or background information -->
 This code shows a simple application of a functioning linked list. The test parameters make sure that the functions correctly work.
