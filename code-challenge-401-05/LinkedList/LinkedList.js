@@ -1,5 +1,6 @@
 'use strict';
 
+// CODE CHALLENGE 05
 class Node {
   constructor(value) {
     this.value = value;
@@ -37,13 +38,48 @@ class LinkedList {
   }
 
   // CODE CHALLENGE 06
+  append(value) {
+    let newNode = new Node(value)
+    let current = this.head;
+    while (current.next !== null) {
+      current = current.next;
+    }
+    current.next = newNode;
+  }
 
-  // add append
+  // Code below is currently not working, trying to fix it
 
-  // add insert before
+  // insertBefore(oldValue, newValue) {
+  //   let newNode = new Node(newValue)
+  //   let current = this.head;
+  //   if (current.next === oldValue)
+  //     current.next.next = this.insert(newValue);
+  //   if (current.next !== oldValue)
+  //     while (current.next !== null && current.next.value !== oldValue) {
+  //       current = current.next;
+  //     }
+  //   if (current.next !== null) {
+  //     newNode.next = current.next;
+  //     current.next = newNode;
+  //   }
+  //   if (current.next === null) {
+  //     return 'Hmmm, something went wrong';
+  //   }
+  // }
 
-  // add insert after
-
+  // insertAfter(oldValue, newValue) {
+  //   let newNode = new Node(newValue);
+  //   let current = this.head;
+  //   while (current.next !== null && current.oldValue !== oldValue) {
+  //     current = current.next;
+  //   }
+  //   if(current.next === null) {
+  //     return 'Hmmm, something went wrong';
+  //   } else {
+  //     newNode.next = current.next;
+  //     current.next = newNode;
+  //   }
+  // }
 }
 
 function traverse(ll) {
