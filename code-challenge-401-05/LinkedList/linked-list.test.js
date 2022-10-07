@@ -3,7 +3,8 @@
 const LinkedList = require('./LinkedList.js');
 const ll = new LinkedList();
 
-describe('Testing the Linked List data structure', () => {
+// CODE CHALLENGE 05
+describe('Testing the Linked-List data structure', () => {
   test('Can successfully instantiate an empty linked list', () => {
     expect(ll).toBeTruthy();
     expect(ll.head).not.toBeTruthy();
@@ -38,5 +39,27 @@ describe('Testing the Linked List data structure', () => {
     let str = ll.toString(3);
     console.log(str);
     expect(str).toEqual(true);
+  });
+});
+
+// CODE CHALLENGE 06
+describe('Testing the Linked-List-Insertions data structure', () => {
+  test('Can successfully add a node to the end of the linked list', () => {
+    console.log('working on')
+  });
+  test('Can successfully add multiple nodes to the end of a linked list', () => {
+    console.log('working on')
+  });
+  test('Can successfully insert a node before a node located i the middle of a linked list', () => {
+    console.log('working on')
+  });
+  test('Can successfully insert a node before the first node of a linked list', () => {
+    console.log('working on')
+  });
+  test('Can successfully insert after a node in the middle of the linked list', () => {
+    console.log('working on')
+  });
+  test('Can successfully insert a node after the last node of the linked list', () => {
+    console.log('working on')
   });
 });

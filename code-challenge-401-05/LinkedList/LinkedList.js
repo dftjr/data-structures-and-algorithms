@@ -35,6 +35,15 @@ class LinkedList {
     }
     return false;
   }
+
+  // CODE CHALLENGE 06
+
+  // add append
+
+  // add insert before
+
+  // add insert after
+
 }
 
 function traverse(ll) {
