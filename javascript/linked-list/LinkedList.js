@@ -93,7 +93,7 @@ class LinkedList {
     }
     if (num >= k) {
       current = this.head;
-      for(let i = 0; i < num - k; i++) {
+      for (let i = 0; i < num - k; i++) {
         current = current.next;
       };
     };
@@ -107,8 +107,7 @@ class LinkedList {
     this.head = new Node(current1.value);
     let current = this.head;
     current.next = new Node(current2.value);
-    while(current1 !== null && current2 !== null) {
-      // current = current.next;
+    while (current1 !== null && current2 !== null) {
       current.next = new Node(current2.value);
       current = current.next;
       current.next = new Node(current1.value);
