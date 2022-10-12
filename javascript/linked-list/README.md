@@ -69,9 +69,12 @@ I created the methods first, then implimented the testing after the fact. Reques
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
-1. append (adds a number to the end of the list)
-2. insertBefore (finds a number in the list, adds a new number before the found number)
-3. insertAfter (finds a number in the list, adds a new number after the found number)
+1. insert (adds a number to the list)
+2. include (finds a number in the list)
+3. toString (returns all the values via a string)
+4. append (adds a number to the end of the list)
+5. insertBefore (finds a number in the list, adds a new number before the found number)
+6. insertAfter (finds a number in the list, adds a new number after the found number)
 
 ## Checklist (Features)
 
@@ -95,3 +98,45 @@ I created the methods first, then implimented the testing after the fact. Reques
 - [x] Can successfully insert a node before the first node of a linked list
 - [ ] Can successfully insert after a node in the middle of the linked list
 - [x] Can successfully insert a node after the last node of the linked list
+
+<br>
+
+# Linked List (Code Challenge 07)
+<!-- Short summary or background information -->
+Add new method to the original Linked List challenge.
+
+## Challenge
+<!-- Description of the challenge -->
+Add additional method to the previous challenge to help modify the list even more. Create a method that takes a number and see if that node exists in the linked list. If there is a node, return the value inside of it. If the number requested does not exit (linked list is smaller than number requested) return a false.
+
+1. Take a number, search the link list for that node value, return the value inside the node
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+I created the method first, then implimented the testing after the fact.
+
+## API
+<!-- Description of each method publicly available to your Linked List -->
+1. insert (adds a number to the list)
+2. include (finds a number in the list)
+3. toString (returns all the values via a string)
+4. append (adds a number to the end of the list)
+5. insertBefore (finds a number in the list, adds a new number before the found number)
+6. insertAfter (finds a number in the list, adds a new number after the found number)
+7. kthFromEnd (take a value and see if that node exists, return its value)
+
+## Checklist (Features)
+
+- [x] Write the following methods for the Linked List class:
+  - [x] kth from end
+    - [x] Argument: a number, <code>k</code>, as a parameter.
+    - [x] Return the node’s value that is <code>k</code> places from the tail of the linked list.
+    - [x] You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+## Checklist (Tests)
+
+- [x] Where k is greater than the length of the linked list
+- [x] Where k and the length of the list are the same
+- [ ] Where k is not a positive integer
+- [x] Where the linked list is of a size 1
+- [x] “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
