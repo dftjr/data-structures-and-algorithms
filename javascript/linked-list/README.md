@@ -1,13 +1,13 @@
 # Linked List (Code Challenge 05)
 <!-- Short summary or background information -->
-Create a small test application that lets you create and test the functionality of a linked list.
+Create a small test application that lets you create and test the functionality of a linked list. This linked list will hold numbers based on the methods added to this application.
 
 ## Challenge
 <!-- Description of the challenge -->
 The application should create an empty Linked List that is able to take in new values and return them. The application must do the following things:
 
 1. Insert a number into the linked list
-2. search for a number inside the linked list
+2. Search for a number inside the linked list
 3. Return all the values inside of the linked list in a <code>string</code> format
 
 ## Approach & Efficiency
@@ -48,3 +48,50 @@ I created the methods first, then implimented the testing after the fact.
 - [x] Will return true when finding a value within the linked list that exists
 - [x] Will return false when searching for a value in the linked list that does not exist
 - [x] Can properly return a collection of all the values that exist in the linked list
+
+<br>
+
+# Linked List (Code Challenge 06)
+<!-- Short summary or background information -->
+Add new methods to the original Linked List challenge.
+
+## Challenge
+<!-- Description of the challenge -->
+Add additional methods to the previous challenge to help modify the list even more. This challene will involve adding numbers at the end of a list and finding certain numbers while adding new number before and/or after that searched number.
+
+1. Insert a number to the end of the list
+2. Search for a number inside the linked list, add a number before that found number
+3. Search for a number inside the linked list, add a number after that found number
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+I created the methods first, then implimented the testing after the fact. Requested some help from TA's to get the methods correct.
+
+## API
+<!-- Description of each method publicly available to your Linked List -->
+1. append (adds a number to the end of the list)
+2. insertBefore (finds a number in the list, adds a new number before the found number)
+3. insertAfter (finds a number in the list, adds a new number after the found number)
+
+## Checklist (Features)
+
+- [x] Write the following methods for the Linked List class:
+  - [x] append
+    - [x] Arguments: new value
+    - [x] Adds a new node with the given <code>value</code> to the end of the list
+  - [x] insert before
+    - [x] Arguments: value, new value
+    - [x] Adds a new node with the given new value immediately before the first node that has the value specified
+  - [x] insert after
+    - [x] Arguments: value, new value
+    - [x] Adds a new node with the given new value immediately after the first node that has the value specified
+
+## Checklist (Tests)
+
+- [x] Can successfully add a node to the end of the linked list
+- [x] Can successfully add multiple nodes to the end of a linked list
+- [x] The head property will properly point to the first node in the linked list
+- [ ] Can successfully insert a node before a node located i the middle of a linked list
+- [x] Can successfully insert a node before the first node of a linked list
+- [ ] Can successfully insert after a node in the middle of the linked list
+- [x] Can successfully insert a node after the last node of the linked list

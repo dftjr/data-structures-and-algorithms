@@ -10,7 +10,6 @@ class Node {
 
 class LinkedList {
   constructor() {
-    this.count = 1;
     this.head = null;
   }
 
@@ -18,7 +17,6 @@ class LinkedList {
     let node = new Node(value);
     node.next = this.head;
     this.head = node;
-    this.count++;
   }
 
   includes(value) {
@@ -31,14 +29,57 @@ class LinkedList {
   }
 
   toString() {
-    let objString = `${this.head.value}`;
-    let current = this.head.next;
-    for (let i = 0; i < this.count && current != null; i++) {
-      objString = `${objString} -> ${current.value}`;
+    let objString = '';
+    let current = this.head;
+    while (current !== null) {
+      objString += `{${current.value}} -> `;
       current = current.next;
     }
-    return objString + ' -> NULL';
+    return objString + 'NULL';
   }
-}
+
+  // CODE CHALLENGE 06
+  append(value) {
+    let node = new Node(value)
+    let current = this.head;
+    while (current.next !== null) {
+      current = current.next;
+    }
+    current.next = node;
+  }
+
+  insertBefore(oldValue, value) {
+    let node = new Node(value)
+    let current = this.head;
+    if (current.value === oldValue) {
+      this.insert(value);
+    }
+    if (current.value !== oldValue) {
+      while (current.next !== null && current.next.value !== oldValue) {
+        current = current.next;
+      }
+      if (current.next !== null)
+        return console.log('Hmmm, something went wrong');
+      if (current.next === null) {
+        node.next = current.next;
+        current.next = node;
+      }
+    }
+  }
+
+    insertAfter(oldValue, value) {
+      let node = new Node(value);
+      let current = this.head;
+      while (current.next !== null && current.value !== oldValue) {
+        current = current.next;
+      }
+      if (current.next !== null)
+        return console.log('Hmmm, something went wrong');
+      if (current.next === null) {
+        node.next = current.next;
+        current.next = node;
+      }
+    }
+  }
 
 module.exports = LinkedList;
