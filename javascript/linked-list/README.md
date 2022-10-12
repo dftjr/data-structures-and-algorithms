@@ -179,4 +179,4 @@ I created the method first, then implimented the testing after the fact.
 
 ## Checklist (Tests)
 
-- [ ] Function is properly tested and working
+- [x] Function is properly tested and working
