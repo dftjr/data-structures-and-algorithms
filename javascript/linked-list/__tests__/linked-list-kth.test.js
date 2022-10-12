@@ -5,7 +5,7 @@ const ll = new LinkedList();
 ll.insert(1);
 
 // CODE CHALLENGE 07
-describe('Testing the Linked List kth testing', () => {
+describe('Testing the Linked List kth method', () => {
   test('Where k is greater than the length of the linked list', () => {
     let k = ll.kthFromEnd(2)
     expect(k).toBeFalsy();

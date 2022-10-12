@@ -5,7 +5,7 @@ const ll = new LinkedList();
 ll.insert(1);
 
 // CODE CHALLENGE 06
-describe('Testing the Linked List Insertions testing', () => {
+describe('Testing the Linked List Insertions methods', () => {
   test('Can successfully add a node to the end of the linked list', () => {
     ll.append(2);
     expect(ll.toString()).toEqual('{1} -> {2} -> NULL');

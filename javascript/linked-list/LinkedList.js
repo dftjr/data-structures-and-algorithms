@@ -99,6 +99,24 @@ class LinkedList {
     };
     return current.value;
   };
+
+  // CODE CHALLENGE 08
+  zipLists(list1, list2) {
+    let current1 = list1.head;
+    let current2 = list2.head;
+    this.head = new Node(current1.value);
+    let current = this.head;
+    current.next = new Node(current2.value);
+    while(current1 !== null && current2 !== null) {
+      // current = current.next;
+      current.next = new Node(current2.value);
+      current = current.next;
+      current.next = new Node(current1.value);
+      current1 = current1.next;
+      current2 = current2.next;
+      console.log(current);
+    }
+  }
 };
 
 module.exports = LinkedList;
