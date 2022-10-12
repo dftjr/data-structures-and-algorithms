@@ -140,3 +140,43 @@ I created the method first, then implimented the testing after the fact.
 - [ ] Where k is not a positive integer
 - [x] Where the linked list is of a size 1
 - [x] “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+
+<br>
+
+# Linked List (Code Challenge 08)
+<!-- Short summary or background information -->
+Add new method to the original Linked List challenge.
+
+## Challenge
+<!-- Description of the challenge -->
+Add additional method to the previous challenge to help modify the list even more. Create a zip lists function which will combine two already create linked lists together. This should output the string once combined.
+
+1. Take in two linked lists, combine them, output using the toString() method previous created.
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+I created the method first, then implimented the testing after the fact.
+
+## API
+<!-- Description of each method publicly available to your Linked List -->
+1. insert (adds a number to the list)
+2. include (finds a number in the list)
+3. toString (returns all the values via a string)
+4. append (adds a number to the end of the list)
+5. insertBefore (finds a number in the list, adds a new number before the found number)
+6. insertAfter (finds a number in the list, adds a new number after the found number)
+7. kthFromEnd (take a value and see if that node exists, return its value)
+8. zipLists (take two different linked lists and merge them together)
+
+## Checklist (Features)
+
+- [x] Write a function called zip lists
+  - [x] Arguments: 2 linked lists
+  - [x] Return: New Linked List, zipped as noted below
+- [x] Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the the zipped list.
+- [x] Try and keep additional space down to O(1)
+- [x] You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+## Checklist (Tests)
+
+- [x] Function is properly tested and working

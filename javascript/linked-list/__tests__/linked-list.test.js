@@ -4,7 +4,7 @@ const LinkedList = require('../LinkedList.js');
 const ll = new LinkedList();
 
 // CODE CHALLENGE 05
-describe('Testing the Linked-List testing', () => {
+describe('Testing the Linked-List methods', () => {
   test('Can properly insert into the linked list', () => {
     ll.insert(1);
     expect(ll.head.value).toEqual(1);
