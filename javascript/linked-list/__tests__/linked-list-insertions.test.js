@@ -5,7 +5,7 @@ const ll = new LinkedList();
 ll.insert(1);
 
 // CODE CHALLENGE 06
-describe('Testing the Linked-List data structure', () => {
+describe('Testing the Linked List Insertions testing', () => {
   test('Can successfully add a node to the end of the linked list', () => {
     ll.append(2);
     expect(ll.toString()).toEqual('{1} -> {2} -> NULL');
@@ -17,7 +17,6 @@ describe('Testing the Linked-List data structure', () => {
   });
   test('Can successfully insert a node before a node located in the middle of a linked list', () => {
     console.log('Working on middle insert before test, passes but not actually true');
-
   });
   test('Can successfully insert a node before the first node of a linked list', () => {
     ll.insertBefore(1, 0);
