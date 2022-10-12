@@ -10,13 +10,15 @@ class Node {
 
 class LinkedList {
   constructor() {
+    this.count = 1;
     this.head = null;
   }
 
   insert(value) {
-    let newNode = new Node(value);
-    newNode.next = this.head;
-    this.head = newNode;
+    let node = new Node(value);
+    node.next = this.head;
+    this.head = node;
+    this.count++;
   }
 
   includes(value) {
@@ -29,65 +31,13 @@ class LinkedList {
   }
 
   toString() {
-    let returnValue = String(this.head);
-    if (this.next) {
-      returnValue = returnValue + "-> " + String(this.next);
-    }
-  r eturn returnValue;
-    };
-    return false;
-  }
-
-  // CODE CHALLENGE 06
-  append(value) {
-    let newNode = new Node(value)
-    let current = this.head;
-    while (current.next !== null) {
+    let objString = `${this.head.value}`;
+    let current = this.head.next;
+    for (let i = 0; i < this.count && current != null; i++) {
+      objString = `${objString} -> ${current.value}`;
       current = current.next;
     }
-    current.next = newNode;
-  }
-
-  // Code below is currently not working, trying to fix it
-
-  // insertBefore(oldValue, newValue) {
-  //   let newNode = new Node(newValue)
-  //   let current = this.head;
-  //   if (current.next === oldValue)
-  //     current.next.next = this.insert(newValue);
-  //   if (current.next !== oldValue)
-  //     while (current.next !== null && current.next.value !== oldValue) {
-  //       current = current.next;
-  //     }
-  //   if (current.next !== null) {
-  //     newNode.next = current.next;
-  //     current.next = newNode;
-  //   }
-  //   if (current.next === null) {
-  //     return 'Hmmm, something went wrong';
-  //   }
-  // }
-
-  // insertAfter(oldValue, newValue) {
-  //   let newNode = new Node(newValue);
-  //   let current = this.head;
-  //   while (current.next !== null && current.oldValue !== oldValue) {
-  //     current = current.next;
-  //   }
-  //   if(current.next === null) {
-  //     return 'Hmmm, something went wrong';
-  //   } else {
-  //     newNode.next = current.next;
-  //     current.next = newNode;
-  //   }
-  // }
-}
-
-function traverse(ll) {
-  let current = ll.head;
-  while (current !== null) {
-    console.log(current.value);
-    current = current.next;
+    return objString + ' -> NULL';
   }
 }
 
