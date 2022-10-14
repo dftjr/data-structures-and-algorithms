@@ -1,6 +1,6 @@
 'use strict';
 
-const Stack = require('../index.js');
+const Stack = require('./../../Stack/index.js');
 const stk = new Stack();
 
 // CODE CHALLENGE 10

@@ -4,8 +4,8 @@ class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
-  }
-}
+  };
+};
 
 class Queue {
   constructor() {
@@ -15,12 +15,12 @@ class Queue {
 
   enqueue(value) {
     const node = new Node(value);
-    if(this.isEmpty()) return this.front = node;
-    if(this.back) {
+    if (this.isEmpty()) return this.front = node;
+    if (this.back) {
       this.back.next = node;
       this.back = node;
     }
-    if(!this.back) {
+    if (!this.back) {
       this.back = node;
       this.front.next = node;
     }
