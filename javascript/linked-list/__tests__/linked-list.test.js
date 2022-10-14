@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = require('../LinkedList.js');
+const LinkedList = require('../index.js');
 const ll = new LinkedList();
 
 // CODE CHALLENGE 05

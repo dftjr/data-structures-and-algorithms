@@ -24,7 +24,7 @@ class Stack {
 
   pop() {
     if (this.isEmpty()) throw new Error('Error, no value found');
-    if (!this.isEmpty() === true) {
+    if (!this.isEmpty()) {
       let current = this.top;
       this.top = current.next;
       current.next = null;
@@ -34,7 +34,7 @@ class Stack {
 
   peek() {
     if (this.isEmpty()) throw new Error('Error, no value found');
-    if (!this.isEmpty() === true) return this.top.value;
+    if (!this.isEmpty()) return this.top.value;
   };
 
   isEmpty() {
