@@ -1,6 +1,6 @@
 'use strict';
 
-const Queue = require('./../../Queue/index.js');
+const Queue = require('../../Queue/index.js');
 const que = new Queue();
 
 // CODE CHALLENGE 10
