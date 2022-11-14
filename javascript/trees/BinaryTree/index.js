@@ -13,34 +13,31 @@ class BinaryTree {
     this.root = null;
   };
 
-  inOrder(node) {
-    const nodesValue = [];
-    if(root !== root) {
-      this.inOrder(root.left);
-      nodesValue.push(root.value);
-      this.inOrder(root.right);
+  inOrder(root = this.root, arr = []) {
+    if (root !== null) {
+      this.inOrder(root.left, arr);
+      arr.push(root.value);
+      this.inOrder(root.right, arr);
     };
-    return nodesValue;
+    return arr
   };
 
-  preOrder(node) {
-    const nodesValue = [];
-    if(root !== root) {
-      nodesValue(root.value);
-      this.preOrder(root.left);
-      this.preOrder(root.right);
+  preOrder(root = this.root, arr = []) {
+    if (root !== null) {
+      arr.push(root.value);
+      this.preOrder(root.left, arr);
+      this.preOrder(root.right, arr);
     };
-    return nodesValue;
+    return arr
   };
 
-  postOrder(node) {
-    const nodesValue = [];
-    if(root !== null) {
-      this.postOrder(root.left);
-      this.postOrder(root.right);
-      nodesValue(root.value);
+  postOrder(root = this.root, arr = []) {
+    if (root !== null) {
+      this.postOrder(root.left, arr);
+      this.postOrder(root.right, arr);
+      arr.push(root.value);
     };
-    return nodesValue;
+    return arr
   };
 };
 
