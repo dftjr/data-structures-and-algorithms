@@ -39,6 +39,15 @@ class BinaryTree {
     };
     return arr
   };
+
+  getMax() {
+    if (this.root === null) return null;
+    let solution = this.inOrder()
+    let highestNum = 0;
+    for (let i = 0; i <= solution.length; i++) {
+      if (solution[i] > highestNum) highestNum = solution[i];
+    } return highestNum;
+  };
 };
 
 module.exports = BinaryTree;
