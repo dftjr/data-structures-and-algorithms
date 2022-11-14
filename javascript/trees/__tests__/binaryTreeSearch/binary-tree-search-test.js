@@ -3,7 +3,7 @@
 const BinaryTree = require("../../BinaryTreeSearch")
 const testTree = new BinaryTree();
 
-describe('Test binary tree search', () => {
+describe('Testing Binary Tree Search methods', () => {
   test('Can successfully instantiate an empty tree', () => {
     testTree;
     expect(testTree).toBeTruthy();
