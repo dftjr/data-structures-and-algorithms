@@ -48,6 +48,21 @@ class BinaryTree {
       if (solution[i] > highestNum) highestNum = solution[i];
     } return highestNum;
   };
+
+  breadthFirst(test) {
+    let visited = [];
+    let queue = [];
+    let current = test.root;
+    if (test.root === null) return null;
+    queue.push(current);
+    while (queue.length) {
+      current = queue.shift();
+      visited.push(current.value)
+      if (current.left) queue.push(current.left);
+      if (current.right) queue.push(current.right);
+    }
+    return visited;
+  };
 };
 
 module.exports = BinaryTree;
