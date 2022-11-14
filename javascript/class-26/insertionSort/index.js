@@ -5,7 +5,7 @@ function insertionSort(array) {
     let j = i - 1;
     let temp =  array[i];
     while (j >= 0 && temp < array[j]) {
-      array[j+1] = array [j];
+      array[j + 1] = array [j];
       j = j - 1;
     }
     array[j+1] = temp;
