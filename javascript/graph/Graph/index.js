@@ -1,68 +1,35 @@
 'use strict';
 
-class Vertex {
-  constructor(value) {
-    this.value = value;
-  }
-}
-
-class Edge {
-  constructor(vertex, weight = 1) {
-    this.vertex = vertex;
-    this.weight = weight;
-  }
-}
-
 class Graph {
   constructor() {
-    this.adjacencies = new Map(); // this is a built in HashTable
-  }
+      this.edges = {};
+      this.nodes = [];
+   };
 
-  /**
-   * Adds a new Vertex to the Graph Adjacency list
-   * @param {any} value
-   */
-  addVertex(value) {
-    let vertex = new Vertex(value);
-    this.adjacencies.set(vertex, []);
-    return vertex;
-  }
+  addNode(value) {
+    this.nodes.push(value);
+    this.edges[value] = [];
+  };
 
-  /**
-   * Adds a new edge between vertices
-   * @param {Vertex} startVertex
-   * @param {Vertex} edgeVertex
-   */
-  addEdge(startVertex, endVertex) {
-    if (this.adjacencies.has(startVertex) && this.adjacencies.has(endVertex)) {
-      let edges = this.adjacencies.get(startVertex); // []
-      edges.push(new Edge(endVertex));
-    } else {
-      throw new Error('Invalid input Vertex');
-    }
-  }
 
-  /**
-   * Returns a list of all neighboring Vertices of the input Vertex
-   * @param {Vertex} Vertex
-   */
-  getNeighbors(Vertex) {
+  addEdge(nodeA, nodeB, weight = 1) {
+    this.edges[nodeA].push({ node: nodeB, weight: weight });
+    this.edges[nodeB].push({ node: nodeA, weight: weight });
+  };
 
-  }
-
-  /**
-   * Return all Nodes that are listed in the adjacency list
-   */
   getNodes() {
+    return this.nodes;
+  };
 
-  }
+  getNeighbors(node) {
+    if (!this.edges) return this.edges;
+    return this.edges[node];
+  };
 
-  /**
-   * Returns the total number of nodes in the graph.
-   */
   size() {
-
-  }
-}
+    if (!this.nodes) return 0;
+    return this.getNodes().length;
+  };
+};
 
 module.exports = Graph;

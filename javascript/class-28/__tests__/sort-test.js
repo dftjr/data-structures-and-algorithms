@@ -2,7 +2,7 @@ const Movies = require("../movies");
 const { inGenre, sortTitle, sortYear } = require("../sort");
 
 describe("Sorters", () => {
-  it("can sort movies by year", () => {
+  test("can sort movies by year", () => {
     const movies = sortYear(Movies);
     expect(movies.map((m) => m.title)).toEqual([
       "The Cotton Club",
@@ -18,7 +18,7 @@ describe("Sorters", () => {
     ]);
   });
 
-  it("can sort movies by title", () => {
+  test("can sort movies by title", () => {
     const movies = sortTitle(Movies);
     expect(movies.map((m) => m.title)).toEqual([
       "Beetlejuice",
@@ -34,7 +34,7 @@ describe("Sorters", () => {
     ]);
   });
 
-  it("can find movies by genre", () => {
+  test("can find movies by genre", () => {
     const movies = sortYear(inGenre(Movies, "Adventure"));
     expect(movies.map((m) => m.title)).toEqual([
       "Crocodile Dundee",
