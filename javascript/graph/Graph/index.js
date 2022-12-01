@@ -22,10 +22,12 @@ class Graph {
   };
 
   getNeighbors(node) {
+    if (!this.edges) return this.edges;
     return this.edges[node];
   };
 
   size() {
+    if (!this.nodes) return 0;
     return this.getNodes().length;
   };
 };
