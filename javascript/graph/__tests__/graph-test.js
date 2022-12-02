@@ -4,6 +4,7 @@ const Graph = require('../Graph');
 const graph = new Graph();
 const graph2 = new Graph();
 const graph3 = new Graph();
+const graph4 = new Graph();
 
 describe('Testing the methods in Graph class', () => {
   test('Node can be successfully added to the graph', () => {
@@ -54,8 +55,8 @@ describe('Testing the methods in Graph class', () => {
   });
 });
 
-describe('Testing the methos in Graph class', () => {
-  test('Node can be successfully added to the graph', () => {
+describe('Testing the breadth-first method in Graph class', () => {
+  test('A collection of nodes in their beadth-first traversal order', () => {
     graph3.addNode("Pandora");
     graph3.addNode("Arendelle");
     graph3.addNode("Naboo");
@@ -67,8 +68,32 @@ describe('Testing the methos in Graph class', () => {
     graph3.addEdge("Metroville", "Monstroplolis");
     graph3.addEdge("Metroville", "Narnia");
     graph3.addEdge("Metroville", "Naboo");
-    expect(graph3.breadthFirst("Naboo")).toEqual(["Pandora", "Arendelle", "Metroville", "Monstroplolis", "Narnia", "Naboo"])
+    expect(graph3.breadthFirst("Pandora")).toEqual(["Pandora", "Arendelle", "Metroville", "Monstroplolis", "Narnia", "Naboo"])
     expect(graph2.breadthFirst(1)).toEqual([1])
-    expect(graph.breadthFirst(3)).toEqual([1,2,3])
+    expect(graph.breadthFirst(1)).toEqual([1,2,3])
   });
+});
+
+  describe('Testing the depth-first method in Graph class', () => {
+    test('A collection of nodes in their pre-order depth-first traversal order', () => {
+      graph4.addNode("A");
+      graph4.addNode("B");
+      graph4.addNode("C");
+      graph4.addNode("D");
+      graph4.addNode("E");
+      graph4.addNode("F");
+      graph4.addNode("G");
+      graph4.addNode("H");
+      graph4.addEdge("A", "B");
+      graph4.addEdge("B", "D");
+      graph4.addEdge("B", "C");
+      graph4.addEdge("C", "G");
+      graph4.addEdge("D", "F");
+      graph4.addEdge("D", "H");
+      graph4.addEdge("D", "E");
+      graph4.addEdge("F", "H");
+      expect(graph4.depthFirst("A")).toEqual(["A", "B", "C", "G", "D", "E", "H", "F"]);
+      expect(graph2.depthFirst(1)).toEqual([1]);
+      expect(graph.depthFirst(1)).toEqual([1,3,2]);
+    });
 });
