@@ -4,14 +4,6 @@ class Hashtable {
     this.size = 0;
   }
 
-  hash(key) {
-    let hash = 0;
-    for (let i = 0; i < key.length; i++) {
-      hash += key.charCodeAt(i);
-    }
-    return hash;
-  }
-
   set(key, value) {
     const index = this.hash(key);
     if (this.table[index]) {
@@ -60,6 +52,14 @@ class Hashtable {
       );
       console.log(`${index}: ${keysAndValues}`);
     });
+  }
+
+  hash(key) {
+    let hash = 0;
+    for (let i = 0; i < key.length; i++) {
+      hash += key.charCodeAt(i);
+    }
+    return hash;
   }
 }
 
