@@ -36,19 +36,36 @@ class Graph {
     let adjacent = this.adjacents;
     let visitedArr = [];
     const queue = [];
-    queue.push(this.vertices[0]);
+    queue.push(node);
     const discovered = [];
-    discovered[this.vertices[0]] = true;
+    discovered[node] = true;
     while (queue.length) {
       let visited = queue.shift();
       visitedArr.push(visited)
-      if (visited === node) {
-        return visitedArr;
-      }
       for (let i = 0; i < adjacent[visited].length; i++) {
         if (!discovered[adjacent[visited][i].node]) {
           discovered[adjacent[visited][i].node] = true;
           queue.push(adjacent[visited][i].node);
+        }
+      }
+    }
+    return visitedArr;
+  }
+
+depthFirst(node) {
+   let adjacent = this.adjacents;
+    let visitedArr = [];
+    const stack = [];
+    stack.push(node);
+    const discovered = [];
+    discovered[node] = true;
+    while (stack.length) {
+      let visited = stack.pop();
+      visitedArr.push(visited)
+      for (let i = 0; i < adjacent[visited].length; i++) {
+        if (!discovered[adjacent[visited][i].node]) {
+          discovered[adjacent[visited][i].node] = true;
+          stack.push(adjacent[visited][i].node);
         }
       }
     }
