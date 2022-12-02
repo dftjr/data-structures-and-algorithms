@@ -2,34 +2,58 @@
 
 class Graph {
   constructor() {
-      this.edges = {};
-      this.nodes = [];
-   };
+    this.adjacents = {};
+    this.vertices = [];
+    this.edges = 0;
+  };
 
   addNode(value) {
-    this.nodes.push(value);
-    this.edges[value] = [];
+    this.vertices.push(value);
+    this.adjacents[value] = [];
   };
 
 
   addEdge(nodeA, nodeB, weight = 1) {
-    this.edges[nodeA].push({ node: nodeB, weight: weight });
-    this.edges[nodeB].push({ node: nodeA, weight: weight });
+    this.adjacents[nodeA].push({ node: nodeB, weight: weight });
+    this.adjacents[nodeB].push({ node: nodeA, weight: weight });
   };
 
   getNodes() {
-    return this.nodes;
+    return this.vertices;
   };
 
   getNeighbors(node) {
-    if (!this.edges) return this.edges;
-    return this.edges[node];
+    if (!this.adjacents) return this.adjacents;
+    return this.adjacents[node];
   };
 
   size() {
-    if (!this.nodes) return 0;
+    if (!this.vertices) return 0;
     return this.getNodes().length;
   };
+
+  breadthFirst(node) {
+    let adjacent = this.adjacents;
+    let visitedArr = [];
+    const queue = [];
+    queue.push(this.vertices[0]);
+    const discovered = [];
+    discovered[this.vertices[0]] = true;
+    while (queue.length) {
+      let visited = queue.shift();
+      visitedArr.push(visited)
+      if (visited === node) {
+        return visitedArr;
+      }
+      for (let i = 0; i < adjacent[visited].length; i++) {
+        if (!discovered[adjacent[visited][i].node]) {
+          discovered[adjacent[visited][i].node] = true;
+          queue.push(adjacent[visited][i].node);
+        }
+      }
+    }
+    return visitedArr;
+  }
 };
 
 module.exports = Graph;
