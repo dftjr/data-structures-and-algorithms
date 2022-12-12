@@ -1,6 +1,6 @@
 "use strict";
 
-const HashTable = require("../../hashtable/Hashtable");
+const HashTable = require("../Hashtable");
 const Queue = require("../../stack-and-queue/Queue");
 
 function tree_Intersection(tree1, tree2) {
@@ -20,7 +20,7 @@ function tree_Intersection(tree1, tree2) {
 }
 
 function loop(tree, callback) {
-  const queue = new Queue();
+  const queue = new Queue(); test
   queue.enqueue(tree.root);
   while (!queue.isEmpty()) {
     const node = queue.dequeue().value;
